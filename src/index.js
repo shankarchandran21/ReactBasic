@@ -17,22 +17,32 @@ return(
   <section className='Name'>
     <Name img={Firstimage.img}
           comali={Firstimage.comali}
-    />
+    >
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         A nesciunt ratione doloremque perferendis minima, sed delectus hic vero molestiae sint.</p>
+    </Name>
+  
     <Name img={Secondimage.img}
-          eyes={Secondimage.eyes}
-    />
+          comali={Secondimage.eyes}
+    >
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt quae mollitia quos,
+         consectetur vel ipsam! Nobis iusto cupiditate cumque consequuntur?</p>
+      </Name>
+
   </section>
   
 );
 }
 //.touppercase() use for make capital letter
+//children only want to give as to name if you give some other name the para will not display
 const Name = (about) =>{
+ const {img,comali}=about;
+ console.log(about)
   return(
 <article>
-  <h1>shankar</h1>
-  <img src= {about.img} alt=''/>
-  <h4>{about.comali}</h4>
-  <h4>{about.eyes}</h4>
+  <img src= {img} alt=''/>
+  <h4>{comali}</h4>
+  {about.children}
 </article>
   );
 }
