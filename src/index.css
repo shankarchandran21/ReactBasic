@@ -10,7 +10,6 @@ body {
 }
 
 .Name {
-  display: flex;
 }
 .Name h4 {
   color: red;
