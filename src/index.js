@@ -25,16 +25,30 @@ function Greeting(){
 }
 //.touppercase() use for make capital letter
 //children only want to give as to name if you give some other name the para will not display
-const Name = (about) =>{
- const {img,comali}=about;
+const Name = ({img,comali,eyes}) =>{
+  const clickHandler=(e)=>{ //I declare e and print in console.log. it shows event in console
+                            //The target property gets the element on which the event originally occurred, opposed to the currentTarget property, which always refers to the element whose event listener triggered the event.
+  console.log(e);
+    console.log(e.target);
+    return alert('Hi Shankar')
+  }
+  const secondHandler=(comali)=>console.log(comali);//for clicking sanjay button it will display comali
+ //const {img,comali}=about;
+ //attribute,EventHandler.
+ //onclick,onmouseover.
   return(
-<article>
+<article onMouseOver={()=>{
+  console.log(comali);
+
+}}>
   <img src= {img} alt=''/>
-  <h4>{comali}</h4>
-  {about.children}
+  <h4 onClick={()=>console.log(comali)}>{comali}</h4>
+  <h3>{eyes}</h3>
+  <button type='button'onClick={clickHandler}>CHINDU</button>
+  <button type='button' onClick={()=>secondHandler(comali)}>Sanjay</button>
 </article>
   );
-}
+};
 //<h6>{2+1}</h6>     output gives 3     
 
 //const Image = () =>
